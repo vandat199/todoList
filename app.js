@@ -1,13 +1,38 @@
 // localStorage.setItem('products','Nguyễn Văn Đạt')
 // console.log(localStorage.getItem('products'))
 function save() {
-    let addProduct = document.getElementById('new__Product_id').value;
-    if(_.isEmpty(addProduct)) {
+    // let addProduct = document.getElementById('new__Product_id').value;
+    let addProduct1 = document.getElementById('new__Product_Name').value;
+    let addProduct2= document.getElementById('new__Product_Quality').value;
+    // if(_.isEmpty(addProduct)) {
+    //     document.getElementById('error__name').innerHTML = 'Vui Lòng nhập trên 6 kí tự'
+    // }else if(addProduct.trim().length<=2) {
+    //     document.getElementById('error__name').innerHTML = 'Không được nhỏ hơn 2 kí tự'
+    // }
+    // else if(addProduct.trim().length>50) {
+    //     document.getElementById('error__name').innerHTML = 'Không được lớn hơn 50 kí tự'
+    // }
+    // else{
+    //     document.getElementById('error__name').innerHTML = ''
+    // }
+
+    if(_.isEmpty(addProduct1)) {
         document.getElementById('error__name').innerHTML = 'Vui Lòng nhập trên 6 kí tự'
-    }else if(addProduct.trim().length<=2) {
+    }else if(addProduct1.trim().length<=2) {
         document.getElementById('error__name').innerHTML = 'Không được nhỏ hơn 2 kí tự'
     }
-    else if(addProduct.trim().length>50) {
+    else if(addProduct1.trim().length>50) {
+        document.getElementById('error__name').innerHTML = 'Không được lớn hơn 50 kí tự'
+    }
+    else{
+        document.getElementById('error__name').innerHTML = ''
+    }
+    if(_.isEmpty(addProduct2)) {
+        document.getElementById('error__name').innerHTML = 'Vui Lòng nhập trên 6 kí tự'
+    }else if(addProduct2.trim().length<=2) {
+        document.getElementById('error__name').innerHTML = 'Không được nhỏ hơn 2 kí tự'
+    }
+    else if(addProduct2.trim().length>50) {
         document.getElementById('error__name').innerHTML = 'Không được lớn hơn 50 kí tự'
     }
     else{
@@ -18,7 +43,6 @@ function save() {
     let product_Date = document.getElementById('new__Product_Date').value;
     let product_Color = document.getElementById('new__Product_Color').value;
     let products = localStorage.getItem('products') ? JSON.parse(localStorage.getItem('products')) : []
-
     if(addProduct) {
         // let products = []
         products.push({
